@@ -1,0 +1,22 @@
+# Load ggplot
+library(ggplot2)
+# Make a copy of the data set
+Multiple_Trained_Score_2copy <- Multiple_Trained_Score_2
+# Convert Applicatons and Starts to a factor
+Multiple_Trained_Score_2copy$A_S_Label <- factor(Multiple_Trained_Score_2copy$A_S_Label)
+# Map Applications and starts to fill, make the bars NOT stacked, and make them semitransparent
+# Creat values for each school
+Ashford_D <- ggplot(Multiple_Trained_Score_2copy, aes(x=Ashford.Probability, fill=A_S_Label)) + geom_density(alpha=.3) + ggtitle("Ashfrod University") + labs(x="Probability", y="Density") + theme(plot.title = element_text(color="#666666", face="bold", size=12, hjust=0)) + theme(axis.title = element_text(color="#666666", face="bold", size=10)) + scale_fill_discrete(name="Application Status")
+AIU_D <- ggplot(Multiple_Trained_Score_2copy, aes(x=AIU.Probability, fill=A_S_Label)) + geom_density(alpha=.3) + ggtitle("AIU University") + labs(x="Probability", y="Density") + theme(plot.title = element_text(color="#666666", face="bold", size=12, hjust=0)) + theme(axis.title = element_text(color="#666666", face="bold", size=10)) + scale_fill_discrete(name="Application Status")
+Argosy_D <- ggplot(Multiple_Trained_Score_2copy, aes(x=Argosy.Probability, fill=A_S_Label)) + geom_density(alpha=.3) + ggtitle("Argosy University") + labs(x="Probability", y="Density") + theme(plot.title = element_text(color="#666666", face="bold", size=12, hjust=0)) + theme(axis.title = element_text(color="#666666", face="bold", size=10)) + scale_fill_discrete(name="Application Status")
+CTU_D <- ggplot(Multiple_Trained_Score_2copy, aes(x=CTU.Probability, fill=A_S_Label)) + geom_density(alpha=.3) + ggtitle("CTU University") + labs(x="Probability", y="Density") + theme(plot.title = element_text(color="#666666", face="bold", size=12, hjust=0)) + theme(axis.title = element_text(color="#666666", face="bold", size=10)) + scale_fill_discrete(name="Application Status")
+Everest_D <- ggplot(Multiple_Trained_Score_2copy, aes(x=Everest.Probability, fill=A_S_Label)) + geom_density(alpha=.3) + ggtitle("Everest University") + labs(x="Probability", y="Density") + theme(plot.title = element_text(color="#666666", face="bold", size=12, hjust=0)) + theme(axis.title = element_text(color="#666666", face="bold", size=10)) + scale_fill_discrete(name="Application Status")
+NorthCentral_D <- ggplot(Multiple_Trained_Score_2copy, aes(x=NorthCentral.Prob, fill=A_S_Label)) + geom_density(alpha=.3) + ggtitle("North Central University") + labs(x="Probability", y="Density") + theme(plot.title = element_text(color="#666666", face="bold", size=12, hjust=0)) + theme(axis.title = element_text(color="#666666", face="bold", size=10)) + scale_fill_discrete(name="Application Status")
+UltimateMedical_D <- ggplot(Multiple_Trained_Score_2copy, aes(x=Ultimate.Medical.Probability, fill=A_S_Label)) + geom_density(alpha=.3) + ggtitle("Ultimate Medial University") + labs(x="Probability", y="Density") + theme(plot.title = element_text(color="#666666", face="bold", size=12, hjust=0)) + theme(axis.title = element_text(color="#666666", face="bold", size=10)) + scale_fill_discrete(name="Application Status")
+GrandCanyon_D <- ggplot(Multiple_Trained_Score_2copy, aes(x=GrandCanyon.Probability, fill=A_S_Label)) + geom_density(alpha=.3) + ggtitle("Grand Canyon University") + labs(x="Probability", y="Density") + theme(plot.title = element_text(color="#666666", face="bold", size=12, hjust=0)) + theme(axis.title = element_text(color="#666666", face="bold", size=10)) + scale_fill_discrete(name="Application Status")
+ColoradoChristian_D <- ggplot(Multiple_Trained_Score_2copy, aes(x=Col.Christian.Probability, fill=A_S_Label)) + geom_density(alpha=.3) + ggtitle("Colorado Christian University") + labs(x="Probability", y="Density") + theme(plot.title = element_text(color="#666666", face="bold", size=12, hjust=0)) + theme(axis.title = element_text(color="#666666", face="bold", size=10)) + scale_fill_discrete(name="Application Status")
+South_D <- ggplot(Multiple_Trained_Score_2copy, aes(x=South.Probability, fill=A_S_Label))+ geom_density(alpha=.3) + ggtitle("South University") + labs(x="Probability", y="Density") + theme(plot.title = element_text(color="#666666", face="bold", size=12, hjust=0)) + theme(axis.title = element_text(color="#666666", face="bold", size=10)) + scale_fill_discrete(name="Application Status")
+###
+###
+require(gridExtra)
+grid.arrange(Ashford_D, AIU_D, Argosy_D, CTU_D, NorthCentral_D, ColoradoChristian_D, Everest_D, GrandCanyon_D, South_D, UltimateMedical_D, ncol=2)
